@@ -12,6 +12,3 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
-    const user = document.getElementById("user");
-    const usuario = localStorage.getItem("usuario")
-    user.innerHTML = usuario;
