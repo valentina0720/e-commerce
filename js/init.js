@@ -39,3 +39,24 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+//Menú desplegable: utilice bootstrap para crear el botón con las opciones requeridas y luego utilice el DOM para que apareciera 
+//en los HTML necesarios 
+let dropdown = "";
+dropdown += 
+`<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="userID" data-bs-toggle="dropdown" aria-expanded="false">
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+  <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+</ul>
+</div>  `;
+
+document.getElementById("dropdown").innerHTML = dropdown;
+
+//Nombre de usuario 
+const userID = document.getElementById("userID"); // accedo al parrafo con id user del HTML
+const user = localStorage.getItem("user"); // accedo al dato "usuario" almacenado en el localStorage
+userID.innerHTML = user; // agrego "user" al HTML
