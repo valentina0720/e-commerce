@@ -31,14 +31,8 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-bs-toggle="dropdown" aria-expanded="false">
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
-              </ul>
+            <div id="dropdown">
+              
             </div>            
           </li>
         </ul>
@@ -53,16 +47,16 @@
     <div class="container">
       <h3>Comentarios</h3>
       <hr>
-      <div class="container" id="comentarios" style="border: 1px solid grey;">
+      <div class="container" id="commentsID" style="border: 1px solid grey;">
       </div>
     </div> 
     <div class="container" >
       <h3>Comentar</h3> 
       <br>
       <form id="formComment">
-        <label for="comentario">Tu opinión</label>
+        <label for="commentID">Tu opinión</label>
         <br>
-        <textarea id="comentario"name="comentarios" rows="10" cols="60" placeholder="Escribe aquí tu comentario"></textarea>
+        <textarea id="commentID"name="comentarios" rows="10" cols="60" placeholder="Escribe aquí tu comentario"></textarea>
         <br>
         <br>
         <label for="puntuación">Tu puntuación</label>
@@ -72,7 +66,7 @@
          <option> 3 </option>
          <option> 4 </option>
          <option> 5 </option>
-        <input id="enviar" type="button" value="Enviar"></button>
+        <input id="send" type="button" value="Enviar"></button>
         </select>
       </form>
     </div> 
@@ -81,7 +75,7 @@
     <center>
     <h3>Productos Relacionados</h3> 
     <br>
-    <div class="container" style="width: ;">
+    <div class="container">
       <table>
         <tr>
           <td id="pR0"></td>

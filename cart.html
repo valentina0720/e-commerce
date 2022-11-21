@@ -30,27 +30,208 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-bs-toggle="dropdown" aria-expanded="false">
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
-              </ul>
+            <div id="dropdown">
             </div>            
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
   <main>
+    
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <br>
+      <br>
+        <h2><center>Carrito de Compras</center></h2>
+        <br>
+        <h4>Artículos a comprar</h4>
+        <br>
+        <div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="tBuys">
+            </tbody>
+          </table>       
+    </div>
+   
+    <br>
+    <hr>
+    <br>
+    
+  <form action="#" method="get" class="row g-3 needs-validation" name="form1" id="form1id" novalidate>
+    <div>
+      <h4>Tipo de envio</h4>
+      <br>
+      <input type="radio" id="premium" name="shippingType" value="Premium" onclick="setShippingCost(), totalCost()" required>
+      <label for="premium">Premium 2 a 5 días (15%)</label>
+      <br>
+      <input type="radio" id="express" name="shippingType" value="Express" onclick="setShippingCost(), totalCost()">
+      <label for="express">Express 5 a 8 días (7%)</label>
+      <br>
+      <input type="radio" id="standard" name="shippingType" value="Standard" onclick="setShippingCost(), totalCost()">
+      <label for="standard">Standard 12 a 15 días (5%)</label>
+      <div class="invalid-feedback">
+        Por favor, elije un tipo de envio.
+      </div>
+      <br>
+      <br>
+      <br>
+    </div>
+    
+
+      
+      <h4>Dirección de envío</h4>
+      <br>
+      
+      <div class="col-sm-6">
+        <label for="calle" class="form-label">Calle</label>
+        <input id="calle" class="form-control"  required>
+        <div class="invalid-feedback">
+          Ingresa una calle
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <label for="número" class="form-label">Número</label>
+        <input id="número" class="form-control" required>
+        <div class="invalid-feedback">
+          Ingresa un número
+        </div>
+      </div>
+      
+       <div class="col-sm-6">
+        <label for="esquina" class="form-label">Esquina</label>
+        <input id="esquina" class="form-control" required>
+        <div class="invalid-feedback">
+          Ingresa una esquina
+        </div>
+      </div>
+
+    <hr>
+ 
+    <div>
+      <h4>Costos</h4>
+      <br>
+      <div class="list-group-item">
+        <div class="row">
+            <div class="col-11">
+              <h5>Subtotal</h5>
+              <p>Costo unitario del producto por cantidad</p>
+            </div>
+            <div class="col-1">
+              <p>USD<span id="subT"></span></p>
+            </div>
+        </div>    
+      </div>
+      <div class="list-group-item">
+        <div class="row">
+            <div class="col-11">
+              <h5>Costo de envío</h5>
+              <p>Según el tipo de envío</p>
+            </div>
+            <div class="col-1">
+              <p>USD<span id="shippingCost"></span></p>
+            </div>
+        </div>
+      </div>
+      <div class="list-group-item">
+        <div class="row">
+            <div class="col-11">
+              <h5>Total($)</h5>
+            </div>
+            <div class="col-1">
+              <p>USD<span id="total"></span></p>
+            </div>
+      </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div>
+
+    <h4>Forma de pago</h4>
+    <br>
+    
+    <div class="col-12">
+    <td><p id="selectedPay">No ha seleccionado</p></td>
+    <td><button type="button" class="btn btn-link ps-0"data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+     Seleccionar
+    </button></td>
+    <p id="warning" style="color: red;"></p>
+    </div>
+    
+    <!-- Modal -->
+    
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+          </div>
+          
+          <div class="modal-body">
+            
+            <div class="col-12">
+              <input id="creditCard" type="radio" name="payMode" onclick="check2()">
+              <label for="creditCard">Tarjeta  de credito</label>
+              <hr class="my-4">
+            </div>
+            
+            <div class="row g-3">
+                
+                <div class="col-sm-6">
+                  <label for="cardNumber" class="form-label">Número de tarjeta</label>
+                  <input type="number" class="form-control" id="cardNumber"  required minlength="6" >
+                </div>
+      
+                <div class="col-sm-4">
+                  <label for="segurityNumber" class="form-label">Cód. seguridad</label>
+                  <input type="number" class="form-control" id="segurityNumber" minlength="4"  required>  
+                </div>
+      
+                <div class="col-6">
+                  <label for="expire" class="form-label">Vencimiento (MM/AA)</label>
+                  <input type="month" class="form-control" id="expire" required>
+                  <br>
+                </div>
+              
+                <div class="col-12">
+                  <input id="wireTransfer" type="radio" name="payMode" onclick="check2()">
+                  <label for="wireTransfer">Transferencia bancaria</label>
+                  <hr class="my-4">
+                </div>
+                
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="accountNumber" class="form-label">Número de cuenta</label>
+                    <input type="number" class="form-control" id="accountNumber"  minlength="5" required>
+                  </div>
+                </div>
+            </div>
+                    
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
       </div>
     </div>
-  </main>
+  </div> 
+  
+  <button class="btn btn-primary col-12" type="submit" id="register">Finalizar compra</button>
+
+</form>
+
+</main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

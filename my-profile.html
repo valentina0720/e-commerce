@@ -45,14 +45,8 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-bs-toggle="dropdown" aria-expanded="false">
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
-              </ul>
+            <div id="dropdown">
+              
             </div>            
           </li>
         </ul>
@@ -60,10 +54,30 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container" >
+      <br>
+      <div class="col-3">
+        <center>
+          <h3>Perfil</h3>
+        </center>
       </div>
+      <center>
+        <div class="col-3" id="imgContainer" style="float:left">
+          <img src= "https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249__340.png" style="width: 100px ;" id="imgID"/>
+        </div>
+      </center>
+      <hr>
+      <form action="#" method="get" class="row g-3 needs-validation" id="userInformation" novalidate>
+            
+      </form>
+      <div class="col-3">
+        <center>
+          <button class="btn btn-primary" type="submit" id="saveChanges" >Guardar cambios</button>
+        </center>
+      </div>
+      <br>
+      <br>
+         
     </div>
   </main>
   <footer class="text-muted">

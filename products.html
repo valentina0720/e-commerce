@@ -31,14 +31,8 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-bs-toggle="dropdown" aria-expanded="false">
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
-              </ul>
+            <div id="dropdown">
+              
             </div>            
           </li>
         </ul>
@@ -66,8 +60,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+        <div class="col-8 container">
           <div class="row container p-0 m-0">
+            <div class="col">
+              <input type="text" id="search" oninput="searchProducts()" placeholder="Busca aquí">
+            </div>
             <div class="col">
               <p class="font-weight-normal text-end my-2">Precio</p>
             </div>
@@ -86,7 +83,7 @@
           </div>
         </div>
       </div>
-    <div class="container" id="cars">
+    <div class="container" id="productsID">
     </div>
   </main>
   <footer class="text-muted">

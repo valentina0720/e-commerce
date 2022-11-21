@@ -147,7 +147,3 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
-
-const user = document.getElementById("user");
-const usuario = localStorage.getItem("usuario")
-user.innerHTML = usuario;
